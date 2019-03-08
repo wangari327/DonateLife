@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "907304653923",
+    "firebase_url": "https://donatelife-9cc01.firebaseio.com",
+    "project_id": "donatelife-9cc01",
+    "storage_bucket": "donatelife-9cc01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907304653923:android:43680ee917c899d6",
+        "android_client_info": {
+          "package_name": "com.example.silver_tech.donatelife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907304653923-i7n3ej7stu2jog5j3q2sbmqs1j91begl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.silver_tech.donatelife",
+            "certificate_hash": "45d26b131035eefd288efb666919e4c66d9d6c85"
+          }
+        },
+        {
+          "client_id": "907304653923-l0pnm60gch8skvoi2fv93khprh2re6cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW04sE9kmd9EXd7u4_9crAr1EdzvbII4Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907304653923-l0pnm60gch8skvoi2fv93khprh2re6cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

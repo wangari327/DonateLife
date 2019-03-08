@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Donate Life</string>
+    <string name="password_hint">Password</string>
+    <string name="login_hint">Login</string>
+    <string name="life_donor_logo">life donor logo</string>
+    <string name="email_hint">Email</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
