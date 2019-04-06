@@ -1,22 +1,23 @@
-package com.example.silver_tech.donatelife;
+package com.example.silver_tech.donatelife.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.example.silver_tech.donatelife.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     Button LoginButton;
@@ -95,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendToMain() {
-        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent mainIntent = new Intent(LoginActivity.this, Home.class);
         startActivity(mainIntent);
         finish();
     }

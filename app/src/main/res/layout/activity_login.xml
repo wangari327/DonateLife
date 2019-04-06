@@ -8,10 +8,11 @@
     android:layout_gravity="center"
     android:layout_margin="10dp"
     android:background="#fafafa"
-    tools:context=".LoginActivity">
+    android:scrollbars="none"
+    tools:context=".Activities.LoginActivity">
 
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
@@ -20,7 +21,7 @@
         android:padding="10dp">
 
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,6 +145,7 @@
             android:layout_marginRight="8dp"
             android:background="@color/colorTransparent"
             android:text="Don't have an account? Register here"
+            android:textColor="@color/dashboardGreen"
             android:textAllCaps="false"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,5 +165,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/key" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

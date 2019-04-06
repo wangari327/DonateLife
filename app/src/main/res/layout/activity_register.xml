@@ -7,9 +7,10 @@
     android:layout_gravity="center"
     android:layout_margin="10dp"
     android:background="#FAFAFA"
-    tools:context=".RegisterActivity">
+    tools:context=".Activities.RegisterActivity"
+    android:scrollbars="none">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
@@ -29,7 +30,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView9"
             app:srcCompat="@drawable/pass_pic" />
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +38,7 @@
             app:layout_constraintGuide_percent="0.5" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/regUsername"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -47,13 +48,13 @@
             android:ems="10"
             android:hint="Username"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            app:layout_constraintBottom_toTopOf="@+id/regEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.084"
             app:layout_constraintStart_toEndOf="@+id/imageView6" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/regEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -63,13 +64,13 @@
             android:ems="10"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/editText3"
+            app:layout_constraintBottom_toTopOf="@+id/regPhone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.084"
             app:layout_constraintStart_toEndOf="@+id/imageView7" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/regPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -85,7 +86,7 @@
             app:layout_constraintStart_toEndOf="@+id/imageView8" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/regPass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -101,7 +102,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/regPass2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -114,10 +115,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.084"
             app:layout_constraintStart_toEndOf="@+id/imageView10"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@+id/regPass" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/regButton"
             android:layout_width="105dp"
             android:layout_height="44dp"
             android:layout_marginStart="8dp"
@@ -130,7 +131,7 @@
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText5" />
+            app:layout_constraintTop_toBottomOf="@+id/regPass2" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -180,17 +181,17 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:srcCompat="@drawable/pass_pic" />
+        app:srcCompat="@drawable/pass_pic" />
 
         <ProgressBar
-            android:id="@+id/Register_progressBar"
+            android:id="@+id/regProgresBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="38dp"
             android:layout_height="28dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="@+id/button2"
-            app:layout_constraintStart_toStartOf="@+id/button2"
-            app:layout_constraintTop_toTopOf="@+id/button2" />
+            app:layout_constraintBottom_toBottomOf="@+id/regButton"
+            app:layout_constraintEnd_toEndOf="@+id/regButton"
+            app:layout_constraintStart_toStartOf="@+id/regButton"
+            app:layout_constraintTop_toTopOf="@+id/regButton" />
 
         <ImageView
             android:id="@+id/regUserPhoto"
@@ -201,7 +202,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/editText"
+            app:layout_constraintBottom_toTopOf="@+id/regUsername"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
@@ -219,13 +220,14 @@
             android:layout_marginBottom="24dp"
             android:background="@color/colorTransparent"
             android:text="Already a member? login here"
+            android:textColor="@color/dashboardGreen"
             android:textAllCaps="false"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button2"
+            app:layout_constraintTop_toBottomOf="@id/regButton"
             app:layout_constraintVertical_bias="0.0" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
