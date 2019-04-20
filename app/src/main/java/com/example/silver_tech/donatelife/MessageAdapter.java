@@ -7,6 +7,8 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DatabaseReference;
 
+import java.util.Objects;
+
 public class MessageAdapter extends FirebaseListAdapter<ChatMessage> {
 
     private ChatActivity activity;
@@ -32,7 +34,7 @@ public class MessageAdapter extends FirebaseListAdapter<ChatMessage> {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         ChatMessage chatMessage = getItem(position);
-        if (chatMessage.getMessageUserId().equals(activity.getLoggedInUserName()))
+        if (Objects.equals(chatMessage.getMessageUserId(),activity.getLoggedInUserName()))
             view = activity.getLayoutInflater().inflate(R.layout.item_out_message, viewGroup, false);
         else
             view = activity.getLayoutInflater().inflate(R.layout.item_in_message, viewGroup, false);

@@ -10,7 +10,7 @@
     <color name="colorPink">#FF4081</color>
     //dashboard colors
     <color name="dashboardColorPrimary">#FFC107</color>
-    <color name="dashboardColorPrimaryDark">#FFA000</color>
+    <color name="dashboardColorPrimaryDark">#ffa000</color>
     <color name="dashboardBackgroundColor">#fcfcfc</color>
     <color name="dash_light_gray">#ededed</color>
     <color name="deepPurple">#7c4dff</color>
@@ -21,4 +21,5 @@
     <color name="testColorBlue">#152b38</color>
     <color name="dashboardPink">#fe104d</color>
     <color name="black_overlay">#66000000</color>
+    <color name="red">#de7272</color>
 </resources>

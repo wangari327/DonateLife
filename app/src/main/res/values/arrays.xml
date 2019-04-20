@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="organs">
+        <item>select an organ</item>
+        <item>Kidney</item>
+        <item>Liver</item>
+        <item>Heart Upon Death</item>
+        <item>Lungs Upon Death</item>
+        <item>Kidneys Upon Death</item>
+        <item>Whole Body Upon Death</item>
+    </string-array>
+    <string-array name="gender">
+        <item>select gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="county">
+        <item>select your county</item>
+        <item>Nairobi</item>
+        <item>Coast</item>
+        <item>Nyandarua</item>
+        <item>Kisumu</item>
+        <item>Garissa</item>
+        <item>Kilifi</item>
+    </string-array>
+    <string-array name="blood_group">
+        <item> <font color="@color/colorDarkGrey">Choose Blood Group</font></item>
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+</resources>

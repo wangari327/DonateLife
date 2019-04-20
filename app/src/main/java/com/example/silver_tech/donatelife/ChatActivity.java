@@ -59,7 +59,7 @@ public class ChatActivity extends AppCompatActivity {
                     Toast.makeText(ChatActivity.this, "Please enter some texts!", Toast.LENGTH_SHORT).show();
                 } else {
                     FirebaseDatabase.getInstance()
-                            .getReference()
+                            .getReference("chats")
                             .push()
                             .setValue(new ChatMessage(input.getText().toString(),
                                     getInstance().getCurrentUser().getDisplayName(),
@@ -95,7 +95,7 @@ public class ChatActivity extends AppCompatActivity {
         Log.d("Main", "user id: " + loggedInUserName);
 
         FirebaseListAdapter<ChatMessage> adapter = new MessageAdapter(this, ChatMessage.class, R.layout.item_out_message,
-                FirebaseDatabase.getInstance().getReference());
+                FirebaseDatabase.getInstance().getReference("chats"));
         listView.setAdapter(adapter);
     }
 

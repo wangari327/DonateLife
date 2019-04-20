@@ -5,24 +5,33 @@
     tools:context=".Activities.DashboardActivity"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/kenya_wallpaper"
     android:scrollbars="none">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#fcfcfc"
     android:gravity="center"
-    android:id="@+id/ll">
+    android:id="@+id/ll"
+
+    >
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="148dp"
-        android:layout_height="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/dashboardColorPrimaryDark"
-        app:title="DASHBOARD"
-        app:titleTextColor="@color/colorPrimary"></androidx.appcompat.widget.Toolbar>
+        android:background="@color/red"
+        app:title="Save a Life!"
+        app:titleTextColor="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/heart" />
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
+
         android:clipToPadding="false"
         android:gravity="center"
         android:orientation="horizontal"
@@ -31,6 +40,7 @@
         <androidx.cardview.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:onClick="goToDonationPage"
             android:id="@+id/bankcardId"
             android:layout_width="160dp"
             android:layout_height="190dp"
@@ -46,13 +56,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circle_blue"
                     android:padding="10dp"
-                    android:src="@drawable/home" />
+                    android:src="@drawable/donate_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Home"
+                    android:text="Donate"
                     android:textStyle="bold" />
                 <View
                     android:layout_width="match_parent"
@@ -65,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Read and Write Posts"
+                    android:text="Click to register as an organ donor"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -88,13 +98,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circle_purple"
                     android:padding="10dp"
-                    android:src="@drawable/notification" />
+                    android:src="@drawable/group_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Notifications"
+                    android:text="Available donors"
                     android:textStyle="bold" />
                 <View
                     android:layout_width="match_parent"
@@ -107,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Manage Alerts"
+                    android:text="Click to view available donors and their info"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -138,13 +148,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circle_purple"
                     android:padding="10dp"
-                    android:src="@drawable/chats" />
+                    android:src="@drawable/urgent_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Chats"
+                    android:text="Emmergency Requests"
                     android:textStyle="bold" />
                 <View
                     android:layout_width="match_parent"
@@ -157,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Message Members"
+                    android:text="For critical emmergency cases ony"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -181,13 +191,14 @@
                     android:layout_height="64dp"
                     android:background="@drawable/their_message"
                     android:padding="10dp"
-                    android:src="@drawable/heart" />
+                    android:src="@drawable/info_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="OrganBank"
+                    android:text="Information Centre"
                     android:textStyle="bold" />
 
                 <View
@@ -201,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Available Donors"
+                    android:text="learn All about Organ donation"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -233,13 +244,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circle_background_gold"
                     android:padding="10dp"
-                    android:src="@drawable/donate" />
+                    android:src="@drawable/support_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Donate Now"
+                    android:text="About us"
                     android:textStyle="bold" />
                 <View
                     android:layout_width="match_parent"
@@ -252,7 +263,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Donate any organ"
+                    android:text="Policy and contact Info"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
