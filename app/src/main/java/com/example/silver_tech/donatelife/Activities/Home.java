@@ -26,9 +26,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.silver_tech.donatelife.ChatActivity;
+import com.example.silver_tech.donatelife.Fragments.AboutUs;
 import com.example.silver_tech.donatelife.Fragments.HomeFragment;
 import com.example.silver_tech.donatelife.Fragments.ProfileFragment;
-import com.example.silver_tech.donatelife.Fragments.SettingsFragment;
 import com.example.silver_tech.donatelife.Models.Post;
 import com.example.silver_tech.donatelife.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -95,7 +95,7 @@ public class Home extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+                Intent intent = new Intent(getApplicationContext(),Donate.class);
                 startActivity(intent);
             }
         });
@@ -207,6 +207,9 @@ public class Home extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this,SettingsActivity2.class);
+            startActivity(intent);
+
             return true;
         }
 
@@ -223,7 +226,6 @@ public class Home extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
 
         } else if (id == R.id.nav_profile) {
-
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
 
         } else if (id == R.id.nav_chat) {
@@ -231,7 +233,9 @@ public class Home extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_settings2) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,new SettingsFragment()).commit();
+            Intent intent = new Intent(this,DashboardActivity.class);
+            startActivity(intent);
+//            getSupportFragmentManager().beginTransaction().replace(R.id.container,new InfoCentre()).commit();
         } else if (id == R.id.nav_logout) {
 
             FirebaseAuth.getInstance().signOut();
@@ -239,6 +243,8 @@ public class Home extends AppCompatActivity
             startActivity(loginActivity);
             finish();
 
+        } else if (id == R.id.about_us) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,new AboutUs()).commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

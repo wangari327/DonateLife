@@ -10,17 +10,22 @@
             android:title="Home" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_person_black_24dp"
-            android:title="Profile" />
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="Available organ donors" />
         <item
             android:id="@+id/nav_chat"
-            android:icon="@drawable/ic_chat_black_24dp"
+            android:icon="@drawable/ic_forum_black_24dp"
             android:title="Chat room" />
 
         <item
             android:id="@+id/nav_settings2"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="settings" />
+            android:icon="@drawable/ic_lightbulb_outline_black_24dp"
+            android:title="Information centre" />
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/ic_business_center_black_24dp"
+            android:title="About us" />
+
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_exit_to_app_black_24dp"

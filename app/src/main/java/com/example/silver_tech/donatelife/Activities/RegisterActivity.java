@@ -34,6 +34,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,14 +49,16 @@ public class RegisterActivity extends AppCompatActivity {
     Uri pickedImgUri;
     private EditText userEmail,userPassword,userPassword2,userName;
     private ProgressBar loadingProgress;
-    private Button regBtn;
+    private Button regBtn, backbtn;
     private FirebaseAuth mAuth;
+    private Object photoo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         //inu views
+        backbtn = findViewById(R.id.button3);
         userEmail = findViewById(R.id.regEmail);
         userPassword = findViewById(R.id.regPass);
         userPassword2 = findViewById(R.id.regPass2);
@@ -70,6 +73,16 @@ public class RegisterActivity extends AppCompatActivity {
 
         ImgUserPhoto = findViewById(R.id.regUserPhoto);
 
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(loginActivity);
+                finish();
+
+            }
+        });
+
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
             final String password2 = userPassword2.getText().toString();
             final String name = userName.getText().toString();
 
-            if (email.isEmpty()||name.isEmpty()||password.isEmpty()||!password.equals(password2)){
+                if (email.isEmpty() || name.isEmpty() || password.isEmpty() || !password.equals(password2) || pickedImgUri == null) {
 
                 //something goes wrong
                 //we need to display an error message
@@ -129,7 +142,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                         else {
                             //user creation fails
-                            showMessage("Account creation failed. Please try again." + task.getException().getMessage());
+                            showMessage("Account creation failed. Please try again." + Objects.requireNonNull(task.getException()).getMessage());
                             regBtn.setVisibility(View.VISIBLE);
                             loadingProgress.setVisibility(View.INVISIBLE);
                         }
@@ -228,6 +241,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             try {
                 pickedImgUri = data.getData();
+                photoo = pickedImgUri;
                 final InputStream imageStream = getContentResolver().openInputStream(pickedImgUri);
                 final Bitmap selectedImage = getCroppedBitmap(BitmapFactory.decodeStream(imageStream));
                 ImgUserPhoto.setImageBitmap(selectedImage);

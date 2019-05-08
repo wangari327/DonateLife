@@ -13,6 +13,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            app:title="@string/app_name"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -25,9 +26,9 @@
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
+        android:layout_gravity="bottom|center"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/yellow"
+        app:backgroundTint="#fff"
         app:srcCompat="@drawable/ic_create_black_24dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,18 +36,16 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="center_vertical|end"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/colorDarkGrey"
+        app:backgroundTint="#fff"
         app:srcCompat="@drawable/donate_page_icon" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="6dp"
-        android:text="Donate"
         android:textColor="#ffffff"
-        android:textSize="10dp"
         android:textStyle="bold"
         app:layout_anchor="@id/fab"
         app:layout_anchorGravity="center" />

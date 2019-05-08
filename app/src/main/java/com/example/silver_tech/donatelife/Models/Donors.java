@@ -1,6 +1,7 @@
-package com.example.silver_tech.donatelife.Activities;
+package com.example.silver_tech.donatelife.Models;
 
-class Donors {
+public class Donors {
+    private String userPhoto;
     private String donorId;
     private String donorName;
     private String donorGender;
@@ -14,7 +15,8 @@ class Donors {
         //this constructor is required
     }
 
-    public Donors(String donorId,String donorName,String donorGender,String donorPhone,String donorDob,String donorOrgan,String donorCounty,String donorBlood) {
+
+    public Donors(String donorId,String donorName,String donorGender,String donorPhone,String donorDob,String donorOrgan,String donorCounty,String donorBlood,String userPhoto) {
         this.donorId = donorId;
         this.donorCounty = donorCounty;
         this.donorOrgan = donorOrgan;
@@ -24,6 +26,7 @@ class Donors {
         this.donorPhone = donorPhone;
         this.donorName = donorName;
         this.donorBlood = donorBlood;
+        this.userPhoto = userPhoto;
     }
 
     public String getDonorId() {
@@ -56,6 +59,10 @@ class Donors {
 
     public String getDonorBlood() {
         return donorBlood;
+    }
+
+    public String getUserPhoto() {
+        return userPhoto;
     }
 }
 

@@ -9,9 +9,11 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.silver_tech.donatelife.Models.Donors;
 import com.example.silver_tech.donatelife.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,6 +36,8 @@ public class Donate extends AppCompatActivity {
 
     //our database reference object
     DatabaseReference databaseDonors;
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class Donate extends AppCompatActivity {
         //getting views
         editTextName = findViewById(R.id.donor_name);
         editTextDob = findViewById(R.id.dob);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
         editTextPhone = findViewById(R.id.phone);
         spinnerGender = findViewById(R.id.gender_spinner);
@@ -74,6 +80,7 @@ public class Donate extends AppCompatActivity {
         String gender = spinnerGender.getSelectedItem().toString();
         String organ = spinnerOrgans.getSelectedItem().toString();
         String county = spinnerCounty.getSelectedItem().toString();
+
         String blood = spinnerBlood.getSelectedItem().toString();
 
         //checking if the value is provided
@@ -85,7 +92,8 @@ public class Donate extends AppCompatActivity {
             String id = Objects.requireNonNull(mAuth.getCurrentUser()).getDisplayName();
 
             //creating a Donors Object
-            Donors donor = new Donors(id,name,gender,dob,phone,organ,county,blood);
+            String photo = Objects.requireNonNull(currentUser.getPhotoUrl()).toString();
+            Donors donor = new Donors(id,name,gender,dob,phone,organ,county,blood,photo);
 
             //Saving the Donor
             databaseDonors.child(Objects.requireNonNull(id)).setValue(donor);

@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     Button LoginButton;
     EditText loginEmailText;
     EditText loginPassText;
-    Button LoginPage;
+    Button LoginPage, ResetPass;
     ProgressBar LoginProgress;
     private FirebaseAuth mAuth;
 
@@ -40,6 +40,18 @@ public class LoginActivity extends AppCompatActivity {
         LoginProgress = findViewById(R.id.login_progress);
         LoginProgress.setVisibility(View.INVISIBLE);
         LoginPage = findViewById(R.id.login_page);
+        ResetPass = findViewById(R.id.button2);
+
+        ResetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mainIntent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                startActivity(mainIntent);
+                finish();
+
+            }
+        });
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(loginEmail) && !TextUtils.isEmpty(loginPass)) {
                     LoginProgress.setVisibility(View.VISIBLE);
+                    LoginButton.setVisibility(View.INVISIBLE);
                     mAuth.signInWithEmailAndPassword(loginEmail,loginPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -64,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, "Error : " + errorMessage, Toast.LENGTH_LONG).show();
                                     }
                                     LoginProgress.setVisibility(View.INVISIBLE);
-
+                                    LoginButton.setVisibility(View.VISIBLE);
 
                                 }
                             });
